@@ -59,8 +59,9 @@ const Footer = () => {
               JBC<span className="text-[#00D4FF]">.</span>
             </a>
             <p className="text-[rgb(218,218,218)] max-w-md">
-              Software Developer & Computer Engineer bridging hardware expertise
-              with enterprise-level software development.
+              Helping local businesses in Louisiana and beyond establish a
+              professional online presence with high-performance websites built
+              for growth.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (

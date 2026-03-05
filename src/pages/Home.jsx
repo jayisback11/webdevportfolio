@@ -8,17 +8,17 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { Toaster } from '../components/ui/toaster';
+import RoofingWebsite from '@/components/RoofingWebsite';
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-[rgb(17,17,19)]">
-      <Header />
       <Hero />
+      <Contact />
+      <Projects />
+      <Header />
       <About />
       <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
       <Footer />
       <Toaster />
     </div>
