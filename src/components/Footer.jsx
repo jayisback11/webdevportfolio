@@ -8,10 +8,11 @@ const Footer = () => {
     {
       title: "Navigation",
       links: [
-        { label: "About", href: "#about" },
-        { label: "Skills", href: "#skills" },
-        { label: "Experience", href: "#experience" },
-        { label: "Projects", href: "#projects" },
+        { label: "Home", href: "#home" },
+        { label: "Portfolio", href: "#portfolio" },
+        { label: "Services", href: "#services" },
+        { label: "Testimonials", href: "#testimonials" },
+        { label: "Contact", href: "#contact" },
       ],
     },
     {

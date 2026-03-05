@@ -15,10 +15,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: 'Contact', href: '#contact' },
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' }
+    { label: 'Home', href: '#home' },
+    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Services', href: '#services' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Contact', href: '#contact' }
   ];
 
   const scrollToSection = (e, href) => {
@@ -33,7 +34,9 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[rgb(17,17,19)]/95 backdrop-blur-md border-b border-[rgba(255,255,255,0.1)]' : 'bg-transparent'
+        isScrolled || isMobileMenuOpen 
+          ? 'bg-[rgb(17,17,19)]/95 backdrop-blur-md border-b border-[rgba(255,255,255,0.1)]' 
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -64,29 +67,29 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Added background and better styling */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
+          <nav className="md:hidden absolute left-0 right-0 top-[calc(100%-1px)] bg-[rgb(17,17,19)] border-b border-[rgba(255,255,255,0.1)] px-6 py-8 flex flex-col gap-6 animate-in slide-in-from-top-4 duration-300 shadow-2xl">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-[rgb(218,218,218)] hover:text-[#00D4FF] transition-colors text-sm font-medium"
+                className="text-[rgb(218,218,218)] hover:text-[#00D4FF] transition-colors text-lg font-bold uppercase tracking-widest"
               >
                 {item.label}
               </a>
             ))}
             <Button
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="bg-[#00D4FF] hover:bg-[#00B8E6] text-[rgb(17,17,19)] font-semibold rounded-xl"
+              className="bg-[#00D4FF] hover:bg-[#00B8E6] text-[rgb(17,17,19)] font-black rounded-xl py-6 text-lg uppercase"
             >
               Let's Talk
             </Button>
